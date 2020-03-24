@@ -76,7 +76,7 @@ SCRIPT(clockwork);
 
         private _thisOrigin = _thisState;
         {
-            _x params ["_thisTransition", "_condition", "_thisTarget", "_onTransition", ["_condFrequency",0,[0]]];
+            _x params ["_thisTransition", "_condition", "_thisTarget", "_onTransition", ["_conditionFrequency", 0, [0]]];
             // Transition conditions, onTransition, onStateLeaving and
             // onStateEntered functions can use:
             //   _stateMachine   - the state machine
@@ -90,7 +90,7 @@ SCRIPT(clockwork);
             //       _thisTarget variable.
             // Note: onStateEntered functions of initial states won't have
             //       some of these variables defined.
-            if ((CBA_missionTime >= (_lastCheck + _condFrequency)) && {_current call _condition}) exitWith {
+            if ((CBA_missionTime >= (_lastCheck + _conditionFrequency)) && {_current call _condition}) exitWith {
                 _current call (_stateMachine getVariable ONSTATELEAVING(_thisOrigin));
                 _current call _onTransition;
                 _current setVariable [QGVAR(state) + str _id, _thisTarget];
