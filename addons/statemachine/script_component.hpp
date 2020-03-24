@@ -2,6 +2,7 @@
 #include "\x\cba\addons\main\script_mod.hpp"
 
 // #define DISABLE_COMPILE_CACHE
+// #define DEBUG_MODE_FULL
 // #define STATEMACHINE_PERFORMANCE_COUNTERS
 
 #ifdef DEBUG_ENABLED_STATEMACHINE
